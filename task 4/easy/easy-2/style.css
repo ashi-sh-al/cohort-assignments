@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  color: #fff;
+  font-family: "Roboto";
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(87, 0, 160, 0.7),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(255, 0, 98, 0.55),
+      transparent 40%
+    ),
+    linear-gradient(120deg, #12050f, #1a0718, #0f0713);
+
+  background-repeat: no-repeat;
+}
+
+nav {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vh 4vw;
+}
+
+.logo {
+  height: 8vh;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4vw;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #b1b1b1;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.menu-icon:hover {
+  transform: scale(1.2);
+}
+
+.hero {
+  min-height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+}
+
+.hero-left {
+  height: 100%;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  padding: 1vh 2vw;
+}
+
+.logo-container {
+    position:relative;
+}
+
+.blue-star {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.yellow-star {
+    position: absolute;
+    bottom: 3vh;
+    left: 2vw;
+    transform: rotate(45deg);
+}
+
+.logo-img {
+  width: 35vw;
+}
+
+.hero-text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2vw;
+}
+
+.play-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  height: 6vh;
+  width: 12vw;
+  border: none;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  background: linear-gradient(to right, #f71892, #fa6e1d);
+}
+
+.play-now-btn img {
+  height: 3vh;
+  width: 3vh;
+  padding: 1px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.watch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  height: 6vh;
+  width: 12vw;
+  border: 2px solid #f71892;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.squid-character-container {
+  position: relative;
+  padding-right: 5vw;
+  margin-bottom: 10vh;
+}
+
+.squid-character {
+  height: 70vh;
+  position: relative;
+  top: 10vh;
+}
+
+.socialmedia-icons {
+  position: absolute;
+  right: 10vw;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.scroll {
+  position: absolute;
+
+  left: -2vw;
+  top: 50%;
+
+  transform: translateY(-50%) rotate(-90deg);
+
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.scroll p {
+  font-size: 0.9rem;
+
+  color: #ffffff;
+
+  letter-spacing: 0.2rem;
+}
+
+.scroll hr {
+  width: 60px;
+  height: 1px;
+
+  border: none;
+
+  background-color: #ff2b7a;
+
+  opacity: 0.8;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main h5 {
+  position: absolute;
+  font-size: 10rem;
+}
+
+.game-text {
+  left: 20vw;
+  top: 63vh;
+  color: #ffffff20;
+}
+
+.squid-text {
+  transform: rotate(270deg);
+  right: -14rem;
+  top: 10vw;
+  color: #ffffff20;
+}
+
+.card-container {
+  min-height: 30vh;
+  min-width: 80vw;
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  background: linear-gradient(
+    to right,
+    rgba(138, 1, 53, 0.753),
+    rgba(33, 0, 59, 0.938)
+  );
+  padding: 2vh 2vw;
+  border-radius: 1rem;
+  position: relative;
+  top: -2vh;
+  padding: 2vmin;
+}
+
+.card {
+  position: relative;
+}
+
+.squid-game-img {
+  height: 30vh;
+  width: 25vw;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 4vmin;
+  right: 4vmin;
+  background-color: #00000071;
+  padding: 2px;
+  border-radius: 50%;
+}
