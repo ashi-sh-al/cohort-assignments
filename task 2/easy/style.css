@@ -1,149 +1,281 @@
+/* =========================
+   Fonts
+========================= */
+
 @font-face {
-  font-family: comforta;
-  src: url(./fonts/Comfortaa-Regular.ttf);
-}
-@font-face {
-  font-family: cossette;
-  src: url(./fonts/Cossette-Regular.ttf);
+  font-family: "Comforta";
+  src: url("./fonts/Comfortaa-Regular.ttf");
+  font-display: swap;
 }
 
-* {
+@font-face {
+  font-family: "Cossette";
+  src: url("./fonts/Cossette-Regular.ttf");
+  font-display: swap;
+}
+
+/* =========================
+   Reset
+========================= */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background-color: #fbe8b3;
-  overflow: hidden;
+
+/* =========================
+   Base
+========================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+
+  background-color: #fbe8b3;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   Main Layout
+========================= */
+
 .main {
-  height: 100%;
-  width: 100%;
+  position: relative;
+
+  min-height: 100vh;
+
   display: flex;
   justify-content: space-between;
 }
 
+/* =========================
+   Pikachu Image
+========================= */
+
 #pikachu-img {
   position: absolute;
+
+  top: 50%;
   left: 60%;
-  top:50%;
-  transform: translate(-50%,-50%);
-  height: 90vh;
+
+  transform: translate(-50%, -50%);
+
+  height: min(90vh, 850px);
   width: auto;
-  
+
+  object-fit: contain;
+
+  z-index: 5;
+
+  pointer-events: none;
 }
 
+/* =========================
+   Left Section
+========================= */
+
 .main-left {
-  height: 100dvh;
-  width: 55dvw;
+  width: min(55%, 900px);
+  min-height: 100vh;
+
+  padding:
+    2rem
+    2rem
+    0;
+
   background-color: #fcc60c;
-  padding-top: 2vh;
-  padding-left: 2vh;
+
   overflow: hidden;
 }
 
+/* =========================
+   Pokemon Logo
+========================= */
+
 #pokemon-logo {
-  height: 15vh;
+  height: clamp(70px, 12vh, 120px);
   width: auto;
+
+  object-fit: contain;
 }
+
+/* =========================
+   Text Box
+========================= */
 
 .main-left-text-box {
-  margin-top: 10vh;
+  margin-top: 8vh;
   margin-left: 5vw;
+
   display: flex;
   flex-direction: column;
-  gap: 1.5vh;
+
+  gap: 1.2rem;
 }
+
+/* =========================
+   Subtitle
+========================= */
 
 .main-left h4 {
-  font-family: comforta;
+  font-family: "Comforta", sans-serif;
+
   font-size: 1rem;
+
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+
+  letter-spacing: 0.4rem;
 }
 
+/* =========================
+   Main Heading
+========================= */
+
 .main-left h1 {
-  font-family: cossette;
-  font-size: 8rem;
-  margin-top: 1vh;
+  font-family: "Cossette", serif;
+
+  font-size: clamp(4rem, 10vw, 8rem);
+
+  line-height: 0.95;
+
   text-transform: capitalize;
 }
+
+/* =========================
+   Description
+========================= */
+
 .main-left p {
-  font-family: comforta;
+  width: min(520px, 60%);
+
+  font-family: "Comforta", sans-serif;
+
   font-size: 1rem;
-  width: 52%;
+
+  line-height: 1.8;
 }
+
+/* =========================
+   Divider
+========================= */
 
 .hr-line {
   display: flex;
   align-items: center;
-  gap: 2vw;
+
+  gap: 1rem;
+
+  margin-top: 1rem;
 }
+
 .hr-line hr {
-  width: 4vw;
-  border: 1px solid black;
+  width: clamp(40px, 5vw, 80px);
+
+  border: 1px solid #000;
 }
+
 .main-left h5 {
-  font-family: comforta;
+  font-family: "Comforta", sans-serif;
+
+  font-size: 0.9rem;
 }
+
+/* =========================
+   Pokeball
+========================= */
 
 .pokemon-ball-container {
   position: relative;
+
   width: 100%;
   height: 35vh;
+
   overflow: hidden;
 }
 
 #pokemon-ball {
-  position: fixed;
+  position: absolute;
 
   left: 5vw;
-  bottom: -18vh;
+  bottom: -20%;
 
-  height: 40vh;
+  height: min(40vh, 380px);
   width: auto;
 
   opacity: 0.25;
+
+  object-fit: contain;
 }
 
-/* #pokemon-ball {
-  height: 40vh;
-  width: auto;
-  position: relative;
-  left: 5vw;
-  bottom: -8vh;
-  opacity: 25%;
-} */
+/* =========================
+   Right Section
+========================= */
 
+.main-right {
+  width: 10%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* =========================
+   Menu Icon
+========================= */
 
 .main-right img {
-    margin-top: 4vh;
-    margin-right: 4vh;
-    height: 5vh;
+  margin-top: 2rem;
+  margin-right: 2rem;
+
+  height: 36px;
+  width: 36px;
+
+  object-fit: contain;
+
+  cursor: pointer;
 }
 
+/* =========================
+   Dots Navigation
+========================= */
+
 .dots-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    margin-top: 2vh;
-    margin-right: 2vh;
-    position: fixed;
-    right: 2vh;
-    top: 50%;
-    transform: translateY(-50%);
+  position: fixed;
+
+  top: 50%;
+  right: 2rem;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
 }
 
 .dot {
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: #fcc60c;
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background-color: #fcc60c;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
 .first-dot {
-    background-color: black;
+  background-color: #000;
 }
