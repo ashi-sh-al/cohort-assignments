@@ -1,0 +1,242 @@
+@font-face {
+  font-family: daughter;
+  src: url(./fonts/ArchitectsDaughter-Regular.ttf);
+}
+
+@font-face {
+  font-family: oxygen;
+  src: url(./fonts/Oxygen-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  font-family: oxygen;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+
+  width: 100%;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+
+  padding: 1rem 4rem;
+
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* Blur only the background image */
+.header::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("./images/StockCake.com-Cherry Blossom Village.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(6px);
+
+  /* Prevent blur cutoff */
+  transform: scale(1.08);
+
+  z-index: -1;
+}
+
+/* Keep all content sharp */
+.header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-bar {
+  height: 5vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.logo {
+  font-size: 1rem;
+  color: antiquewhite;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  height: 5vh;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(to bottom, #ffb8a6, #ffe1ca);
+}
+
+.nav-socialmedia-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-socialmedia-links a {
+  text-decoration: none;
+  color: antiquewhite;
+  font-size: 1.2rem;
+}
+
+.nav-socialmedia-links a img {
+  width: 20px;
+  height: 20px;
+}
+
+.hero {
+  height: 50vh;
+  width: auto
+  ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text-container h1 {
+  font-family: daughter;
+  font-size: 5rem;
+  word-spacing: 3rem;
+  color: antiquewhite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text-container h3 {
+  font-family: daughter;
+  font-size: 1rem;
+  color: antiquewhite;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.right-h3 {
+  text-align: right;
+}
+
+
+.samurai-img {
+  position: absolute;
+  bottom: -5vh;
+  left: 50%;
+  transform: translateX(-55%);
+  width: auto;
+  height: 65vh;
+}
+
+
+.vision {
+    height: 60vh;
+    width:100%;
+    padding-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background-color: rgba(20, 17, 34, 0.877);
+    position: absolute;
+    top: 60vh;
+    z-index: -1;
+}
+
+.vision-heading {
+  color: antiquewhite;
+  font-family: daughter;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.vision-heading hr {
+  width: 50vw;
+}
+
+.vision-para-container {
+  padding: 4vh 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 15vw;
+}
+
+.vision-para {
+  color: antiquewhite;
+}
+
+.custom-divider {
+  position: relative;
+
+  width: 80vw;
+  height: 2px;
+
+  background-color: #c9b7a0;
+}
+
+/* Center Diamond */
+.custom-divider .diamond {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 14px;
+  height: 14px;
+
+  background-color: #e8c59c;
+
+  border: 2px solid #2b2433;
+
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Left Small Diamond */
+.custom-divider::before,
+.custom-divider::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  background-color: #e8c59c;
+
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.custom-divider::before {
+  left: 0;
+}
+
+.custom-divider::after {
+  right: 0;
+}
