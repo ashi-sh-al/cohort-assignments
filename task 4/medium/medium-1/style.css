@@ -192,6 +192,10 @@ body {
   color: antiquewhite;
 }
 
+.left-h3 {
+  text-align: left;
+}
+
 .right-h3 {
   text-align: right;
 }
