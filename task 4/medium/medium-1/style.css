@@ -1,101 +1,139 @@
+/* =========================
+   Fonts
+========================= */
+
 @font-face {
-  font-family: daughter;
-  src: url(./fonts/ArchitectsDaughter-Regular.ttf);
+  font-family: "Daughter";
+  src: url("./fonts/ArchitectsDaughter-Regular.ttf");
 }
 
 @font-face {
-  font-family: oxygen;
-  src: url(./fonts/Oxygen-Regular.ttf);
+  font-family: "Oxygen";
+  src: url("./fonts/Oxygen-Regular.ttf");
 }
 
-* {
+/* =========================
+   Reset
+========================= */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
-  min-height: 100%;
-  width: 100%;
-  font-family: oxygen;
-  overflow-x: hidden;
+/* =========================
+   Base
+========================= */
+
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  min-height: 100vh;
+
+  font-family: "Oxygen", sans-serif;
+
+  overflow-x: hidden;
+
+  background-color: #141122;
+}
+
+/* =========================
+   Header
+========================= */
 
 .header {
   position: relative;
 
-  width: 100%;
-  height: 80vh;
+  min-height: 100vh;
+
+  padding: 1.5rem 5vw 8rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
-
-  padding: 1rem 4rem;
-
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
 
   overflow: hidden;
-
   isolation: isolate;
+
+  border-bottom-left-radius: 50% 12%;
+  border-bottom-right-radius: 50% 12%;
 }
 
-/* Blur only the background image */
+/* Background */
 .header::before {
   content: "";
 
   position: absolute;
   inset: 0;
 
-  background-image: url("./images/StockCake.com-Cherry Blossom Village.jpg");
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("./images/StockCake.com-Cherry Blossom Village.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  filter: blur(6px);
+  filter: blur(5px);
 
-  /* Prevent blur cutoff */
   transform: scale(1.08);
 
   z-index: -1;
 }
 
-/* Keep all content sharp */
 .header > * {
   position: relative;
   z-index: 1;
 }
 
+/* =========================
+   Navbar
+========================= */
+
 .nav-bar {
-  height: 5vh;
-  width: 100vw;
+  width: 100%;
+  min-height: 70px;
+
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+
+  gap: 2rem;
 }
 
-.logo {
-  font-size: 1rem;
+.logo h4 {
+  font-size: 1.2rem;
+
   color: antiquewhite;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
 }
 
 .nav-links a {
-  height: 5vh;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+
+  color: antiquewhite;
+
   font-size: 1rem;
+
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  background: linear-gradient(to bottom, #ffb8a6, #ffe1ca);
+  color: #ffcf9e;
 }
 
 .nav-socialmedia-links {
@@ -103,103 +141,121 @@ body {
   gap: 1rem;
 }
 
-.nav-socialmedia-links a {
-  text-decoration: none;
-  color: antiquewhite;
-  font-size: 1.2rem;
+.nav-socialmedia-links img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
 }
 
-.nav-socialmedia-links a img {
-  width: 20px;
-  height: 20px;
-}
+/* =========================
+   Hero
+========================= */
 
 .hero {
-  height: 50vh;
-  width: auto
-  ;
+  flex: 1;
+
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  text-align: center;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
 }
 
 .hero-text-container h1 {
-  font-family: daughter;
-  font-size: 5rem;
-  word-spacing: 3rem;
+  font-family: "Daughter", cursive;
+
+  font-size: clamp(3rem, 8vw, 6rem);
+
+  letter-spacing: 0.3rem;
+  word-spacing: 1rem;
+
   color: antiquewhite;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .hero-text-container h3 {
-  font-family: daughter;
-  font-size: 1rem;
+  font-family: "Daughter", cursive;
+
+  font-size: clamp(1rem, 2vw, 1.4rem);
+
   color: antiquewhite;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .right-h3 {
   text-align: right;
 }
 
+/* =========================
+   Samurai Image
+========================= */
 
 .samurai-img {
   position: absolute;
-  bottom: -5vh;
+
+  bottom: -3rem;
   left: 50%;
-  transform: translateX(-55%);
+
+  transform: translateX(-50%);
+
+  height: min(65vh, 700px);
   width: auto;
-  height: 65vh;
+
+  pointer-events: none;
 }
 
+/* =========================
+   Vision Section
+========================= */
 
 .vision {
-    min-height: 60vh;
-    width:100%;
-    padding-top: 25vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    background-color: rgba(20, 17, 34, 0.877);
-    position: absolute;
-    top: 60vh;
-    z-index: -1;
+  padding:
+    10rem
+    8vw
+    6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3rem;
 }
 
 .vision-heading {
+  font-family: "Daughter", cursive;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
   color: antiquewhite;
-  font-family: daughter;
-  font-size: 4rem;
+
   text-align: center;
 }
 
-.vision-heading hr {
-  width: 50vw;
-}
-
-.vision-para-container {
-  padding: 4vh 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 15vw;
-}
-
-.vision-para {
-  color: antiquewhite;
-}
+/* =========================
+   Divider
+========================= */
 
 .custom-divider {
   position: relative;
 
-  width: 80vw;
+  width: min(80vw, 900px);
   height: 2px;
+
+  margin-top: 1rem;
 
   background-color: #c9b7a0;
 }
 
-/* Center Diamond */
 .custom-divider .diamond {
   position: absolute;
 
@@ -213,10 +269,11 @@ body {
 
   border: 2px solid #2b2433;
 
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform:
+    translate(-50%, -50%)
+    rotate(45deg);
 }
 
-/* Left Small Diamond */
 .custom-divider::before,
 .custom-divider::after {
   content: "";
@@ -230,7 +287,9 @@ body {
 
   background-color: #e8c59c;
 
-  transform: translateY(-50%) rotate(45deg);
+  transform:
+    translateY(-50%)
+    rotate(45deg);
 }
 
 .custom-divider::before {
@@ -239,4 +298,26 @@ body {
 
 .custom-divider::after {
   right: 0;
+}
+
+/* =========================
+   Vision Paragraphs
+========================= */
+
+.vision-para-container {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 4rem;
+}
+
+.vision-para {
+  color: antiquewhite;
+
+  font-size: 1rem;
+  line-height: 1.9;
 }
